@@ -147,7 +147,7 @@
     </data>
     <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
     <data name="ctxCopy.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-        <value>Ctrl+C</value>
+        <value>Strg+C</value>
     </data>
     <data name="ctxCopy.Size" type="System.Drawing.Size, System.Drawing">
         <value>152, 22</value>
@@ -156,7 +156,7 @@
         <value>Копіювати</value>
     </data>
     <data name="ctxPaste.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-        <value>Ctrl+V</value>
+        <value>Strg+V</value>
     </data>
     <data name="ctxPaste.Size" type="System.Drawing.Size, System.Drawing">
         <value>152, 22</value>

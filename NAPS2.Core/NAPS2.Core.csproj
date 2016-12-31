@@ -121,6 +121,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Ocr\PlatformSupport.cs" />
+    <Compile Include="Scan\Images\Transforms\AutoContrastTransform.cs" />
     <Compile Include="Util\DownloadFormat.cs" />
     <Compile Include="Util\DownloadInfo.cs" />
     <Compile Include="Ocr\Language.cs" />
@@ -1574,6 +1575,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WinForms\FDesktop.af.resx">
       <DependentUpon>FDesktop.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForms\FDesktop.ar.resx">
       <DependentUpon>FDesktop.cs</DependentUpon>
@@ -1581,9 +1583,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WinForms\FDesktop.bg.resx">
       <DependentUpon>FDesktop.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForms\FDesktop.ca.resx">
       <DependentUpon>FDesktop.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForms\FDesktop.cs.resx">
       <DependentUpon>FDesktop.cs</DependentUpon>
@@ -3099,6 +3103,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WinForms\FProfiles.zh-TW.resx">
       <DependentUpon>FProfiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForms\FProgress.af.resx">
       <DependentUpon>FProgress.cs</DependentUpon>
@@ -4586,6 +4591,8 @@
     <None Include="Icons\arrow_up.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\AutoRotate.png" />
+    <None Include="Resources\auto_contrast.png" />
     <None Include="Icons\application_cascade.png" />
     <Content Include="Icons\application_cascade.ico" />
     <Content Include="Icons\arrow_left.png" />
@@ -4656,7 +4663,12 @@
     <None Include="Icons\blueprints.png" />
     <None Include="Icons\blueprints-small.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Hawkynt\Hawkynt.Tools.csproj">
+      <Project>{589f29c1-47e4-48ed-9c65-494933db58f2}</Project>
+      <Name>Hawkynt.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

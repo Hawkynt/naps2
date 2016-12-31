@@ -958,19 +958,19 @@ namespace NAPS2.WinForms
         {
             // Defaults
 
-            ksm.Assign("Ctrl+Enter", tsScan);
-            ksm.Assign("Ctrl+B", tsBatchScan);
-            ksm.Assign("Ctrl+O", tsImport);
-            ksm.Assign("Ctrl+S", tsdSavePDF);
-            ksm.Assign("Ctrl+P", tsPrint);
-            ksm.Assign("Ctrl+Up", MoveUp);
-            ksm.Assign("Ctrl+Left", MoveUp);
-            ksm.Assign("Ctrl+Down", MoveDown);
-            ksm.Assign("Ctrl+Right", MoveDown);
-            ksm.Assign("Ctrl+Shift+Del", tsClear);
+            ksm.Assign("Strg+Enter", tsScan);
+            ksm.Assign("Strg+B", tsBatchScan);
+            ksm.Assign("Strg+O", tsImport);
+            ksm.Assign("Strg+S", tsdSavePDF);
+            ksm.Assign("Strg+P", tsPrint);
+            ksm.Assign("Strg+Up", MoveUp);
+            ksm.Assign("Strg+Left", MoveUp);
+            ksm.Assign("Strg+Down", MoveDown);
+            ksm.Assign("Strg+Right", MoveDown);
+            ksm.Assign("Strg+Shift+Del", tsClear);
             ksm.Assign("F1", tsAbout);
-            ksm.Assign("Ctrl+OemMinus", btnZoomOut);
-            ksm.Assign("Ctrl+Oemplus", btnZoomIn);
+            ksm.Assign("Strg+OemMinus", btnZoomOut);
+            ksm.Assign("Strg+Oemplus", btnZoomIn);
             ksm.Assign("Del", ctxDelete);
 
             // Configured
