@@ -11,7 +11,11 @@ namespace NAPS2.Scan.Images.Transforms {
   [XmlInclude(typeof(BrightnessTransform))]
   [XmlInclude(typeof(ContrastTransform))]
   [XmlInclude(typeof(TrueContrastTransform))]
-  [XmlInclude(typeof(AutoContrastTransform))]
+
+  [XmlInclude(typeof(AutoRGBTransform))]
+  [XmlInclude(typeof(AutoSaturationTransform))]
+  [XmlInclude(typeof(AutoLuminanceTransform))]
+
   [Serializable]
   public abstract class Transform {
     public static Bitmap PerformAll(Bitmap bitmap, IEnumerable<Transform> transforms) {

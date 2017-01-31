@@ -43,6 +43,11 @@ namespace Hawkynt {
 
   public static class AutoContrastImage {
 
+    private static Range _GetMinMaxFloat(int[] values) {
+      var result = _GetMinMax(values);
+      return new Range(result.Min / 255f, result.Max / 255f);
+    }
+
     private static IntRange _GetMinMax(int[] values) {
       var totalCount = values.Sum();
       const double LOWER_CLIP_PERCENT = 0.5;
@@ -68,20 +73,43 @@ namespace Hawkynt {
       return new IntRange(min, max);
     }
 
-    public static Bitmap ApplyAutoContrast(Bitmap image) {
+    public static Bitmap ApplyAutoRGB(Bitmap image) {
       var stats = new ImageStatistics(image);
+
       var redBoundaries = _GetMinMax(stats.Red.Values);
       var greenBoundaries = _GetMinMax(stats.Green.Values);
       var blueBoundaries = _GetMinMax(stats.Blue.Values);
-      var levelsLinear = new LevelsLinear {
+      var filter = new LevelsLinear {
         InRed = redBoundaries,
         InGreen = greenBoundaries,
         InBlue = blueBoundaries,
       };
-      var result = levelsLinear.Apply(image);
-
+      var result = filter.Apply(image);
       return result;
     }
+
+    public static Bitmap ApplyAutoLuminance(Bitmap image) {
+      var stats = new ImageStatisticsHSL(image);
+
+      var range = _GetMinMaxFloat(stats.Luminance.Values);
+      var filter = new HSLLinear {
+        InLuminance = range,
+      };
+      var result = filter.Apply(image);
+      return result;
+    }
+
+    public static Bitmap ApplyAutoSaturation(Bitmap image) {
+      var stats = new ImageStatisticsHSL(image);
+
+      var range = _GetMinMaxFloat(stats.Saturation.Values);
+      var filter = new HSLLinear {
+        InSaturation = new Range(0, range.Max)
+      };
+      var result = filter.Apply(image);
+      return result;
+    }
+
   }
 
   public static class DeskewImage {

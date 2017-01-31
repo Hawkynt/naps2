@@ -253,9 +253,29 @@ namespace NAPS2 {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap auto_color {
+            get {
+                object obj = ResourceManager.GetObject("auto_color", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap auto_contrast {
             get {
                 object obj = ResourceManager.GetObject("auto_contrast", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap auto_curves {
+            get {
+                object obj = ResourceManager.GetObject("auto_curves", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

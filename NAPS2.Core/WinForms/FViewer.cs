@@ -52,8 +52,10 @@ namespace NAPS2.WinForms {
     private ToolStripButton tsContrast;
     private ToolStripButton tsDelete;
     private TiffViewerCtl tiffViewer1;
-    private ToolStripButton tsAutoContrast;
+    private ToolStripButton tsAutoCurves;
     private ToolStripMenuItem tsAutoRotate;
+    private ToolStripButton tsAutoLuminance;
+    private ToolStripButton tsAutoSaturation;
     private readonly ChangeTracker changeTracker;
 
     public FViewer(ChangeTracker changeTracker) {
@@ -106,26 +108,28 @@ namespace NAPS2.WinForms {
     ///   the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-      var resources = new System.ComponentModel.ComponentResourceManager(typeof(FViewer));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FViewer));
       this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
       this.tiffViewer1 = new NAPS2.WinForms.TiffViewerCtl();
       this.toolStrip1 = new System.Windows.Forms.ToolStrip();
       this.tbPageCurrent = new System.Windows.Forms.ToolStripTextBox();
       this.lblPageTotal = new System.Windows.Forms.ToolStripLabel();
-      this.tsPrev = new ToolStripButton();
-      this.tsNext = new ToolStripButton();
+      this.tsPrev = new System.Windows.Forms.ToolStripButton();
+      this.tsNext = new System.Windows.Forms.ToolStripButton();
       this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
       this.tsdRotate = new System.Windows.Forms.ToolStripDropDownButton();
-      this.tsRotateLeft = new ToolStripMenuItem();
-      this.tsRotateRight = new ToolStripMenuItem();
-      this.tsFlip = new ToolStripMenuItem();
-      this.tsCustomRotation = new ToolStripMenuItem();
-      this.tsAutoRotate = new ToolStripMenuItem();
-      this.tsCrop = new ToolStripButton();
-      this.tsBrightness = new ToolStripButton();
-      this.tsContrast = new ToolStripButton();
-      this.tsDelete = new ToolStripButton();
-      this.tsAutoContrast = new ToolStripButton();
+      this.tsRotateLeft = new System.Windows.Forms.ToolStripMenuItem();
+      this.tsRotateRight = new System.Windows.Forms.ToolStripMenuItem();
+      this.tsFlip = new System.Windows.Forms.ToolStripMenuItem();
+      this.tsCustomRotation = new System.Windows.Forms.ToolStripMenuItem();
+      this.tsAutoRotate = new System.Windows.Forms.ToolStripMenuItem();
+      this.tsCrop = new System.Windows.Forms.ToolStripButton();
+      this.tsBrightness = new System.Windows.Forms.ToolStripButton();
+      this.tsContrast = new System.Windows.Forms.ToolStripButton();
+      this.tsDelete = new System.Windows.Forms.ToolStripButton();
+      this.tsAutoCurves = new System.Windows.Forms.ToolStripButton();
+      this.tsAutoLuminance = new System.Windows.Forms.ToolStripButton();
+      this.tsAutoSaturation = new System.Windows.Forms.ToolStripButton();
       this.toolStripContainer1.ContentPanel.SuspendLayout();
       this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
       this.toolStripContainer1.SuspendLayout();
@@ -151,32 +155,32 @@ namespace NAPS2.WinForms {
       resources.ApplyResources(this.tiffViewer1, "tiffViewer1");
       this.tiffViewer1.Image = null;
       this.tiffViewer1.Name = "tiffViewer1";
-      this.tiffViewer1.KeyDown += new KeyEventHandler(this.tiffViewer1_KeyDown);
+      this.tiffViewer1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tiffViewer1_KeyDown);
       // 
       // toolStrip1
       // 
       resources.ApplyResources(this.toolStrip1, "toolStrip1");
-      this.toolStrip1.Items.AddRange(
-        new System.Windows.Forms.ToolStripItem[] {
-          this.tbPageCurrent,
-          this.lblPageTotal,
-          this.tsPrev,
-          this.tsNext,
-          this.toolStripSeparator1,
-          this.tsdRotate,
-          this.tsCrop,
-          this.tsBrightness,
-          this.tsContrast,
-          this.tsDelete,
-          this.tsAutoContrast
-        });
+      this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tbPageCurrent,
+            this.lblPageTotal,
+            this.tsPrev,
+            this.tsNext,
+            this.toolStripSeparator1,
+            this.tsdRotate,
+            this.tsCrop,
+            this.tsBrightness,
+            this.tsContrast,
+            this.tsDelete,
+            this.tsAutoCurves,
+            this.tsAutoLuminance,
+            this.tsAutoSaturation});
       this.toolStrip1.Name = "toolStrip1";
       // 
       // tbPageCurrent
       // 
       this.tbPageCurrent.Name = "tbPageCurrent";
       resources.ApplyResources(this.tbPageCurrent, "tbPageCurrent");
-      this.tbPageCurrent.KeyDown += new KeyEventHandler(this.tbPageCurrent_KeyDown);
+      this.tbPageCurrent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPageCurrent_KeyDown);
       this.tbPageCurrent.TextChanged += new System.EventHandler(this.tbPageCurrent_TextChanged);
       // 
       // lblPageTotal
@@ -208,14 +212,12 @@ namespace NAPS2.WinForms {
       // tsdRotate
       // 
       this.tsdRotate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.tsdRotate.DropDownItems.AddRange(
-        new System.Windows.Forms.ToolStripItem[] {
-          this.tsRotateLeft,
-          this.tsRotateRight,
-          this.tsFlip,
-          this.tsCustomRotation,
-          this.tsAutoRotate
-        });
+      this.tsdRotate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsRotateLeft,
+            this.tsRotateRight,
+            this.tsFlip,
+            this.tsCustomRotation,
+            this.tsAutoRotate});
       this.tsdRotate.Image = global::NAPS2.Icons.arrow_rotate_anticlockwise_small;
       resources.ApplyResources(this.tsdRotate, "tsdRotate");
       this.tsdRotate.Name = "tsdRotate";
@@ -287,13 +289,29 @@ namespace NAPS2.WinForms {
       this.tsDelete.Name = "tsDelete";
       this.tsDelete.Click += new System.EventHandler(this.tsDelete_Click);
       // 
-      // tsAutoContrast
+      // tsAutoCurves
       // 
-      this.tsAutoContrast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-      this.tsAutoContrast.Image = global::NAPS2.Icons.auto_contrast;
-      resources.ApplyResources(this.tsAutoContrast, "tsAutoContrast");
-      this.tsAutoContrast.Name = "tsAutoContrast";
-      this.tsAutoContrast.Click += new System.EventHandler(this.tsAutoContrast_Click);
+      this.tsAutoCurves.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.tsAutoCurves.Image = global::NAPS2.Icons.auto_curves;
+      resources.ApplyResources(this.tsAutoCurves, "tsAutoCurves");
+      this.tsAutoCurves.Name = "tsAutoCurves";
+      this.tsAutoCurves.Click += new System.EventHandler(this.tsAutoCurves_Click);
+      // 
+      // tsAutoLuminance
+      // 
+      this.tsAutoLuminance.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.tsAutoLuminance.Image = global::NAPS2.Icons.auto_contrast;
+      resources.ApplyResources(this.tsAutoLuminance, "tsAutoLuminance");
+      this.tsAutoLuminance.Name = "tsAutoLuminance";
+      this.tsAutoLuminance.Click += new System.EventHandler(this.tsAutoLuminance_Click);
+      // 
+      // tsAutoSaturation
+      // 
+      this.tsAutoSaturation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+      this.tsAutoSaturation.Image = global::NAPS2.Icons.auto_color;
+      resources.ApplyResources(this.tsAutoSaturation, "tsAutoSaturation");
+      this.tsAutoSaturation.Name = "tsAutoSaturation";
+      this.tsAutoSaturation.Click += new System.EventHandler(this.tsAutoSaturation_Click);
       // 
       // FViewer
       // 
@@ -309,6 +327,7 @@ namespace NAPS2.WinForms {
       this.toolStrip1.ResumeLayout(false);
       this.toolStrip1.PerformLayout();
       this.ResumeLayout(false);
+
     }
 
     #endregion
@@ -434,9 +453,9 @@ namespace NAPS2.WinForms {
       }
     }
 
-    private void tsAutoContrast_Click(object sender, EventArgs e) {
+    private void _ApplyTransform(Transform transform) {
       var scannedImage = this.ImageList.Images[this.ImageIndex];
-      scannedImage.AddTransform(new AutoContrastTransform());
+      scannedImage.AddTransform(transform);
       scannedImage.SetThumbnail(new ThumbnailRenderer(new UserConfigManager()).RenderThumbnail(scannedImage));
 
       this.changeTracker.HasUnsavedChanges = true;
@@ -458,5 +477,10 @@ namespace NAPS2.WinForms {
       this._UpdateImage();
       this.UpdateCallback(Enumerable.Range(this.ImageIndex, 1));
     }
+
+    private void tsAutoCurves_Click(object sender, EventArgs e) => this._ApplyTransform(new AutoRGBTransform());
+    private void tsAutoLuminance_Click(object sender, EventArgs e) => this._ApplyTransform(new AutoLuminanceTransform());
+    private void tsAutoSaturation_Click(object sender, EventArgs e) => this._ApplyTransform(new AutoSaturationTransform());
+
   }
 }

@@ -121,7 +121,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Ocr\PlatformSupport.cs" />
-    <Compile Include="Scan\Images\Transforms\AutoContrastTransform.cs" />
+    <Compile Include="Scan\Images\Transforms\AutoTransforms.cs" />
     <Compile Include="Util\DownloadFormat.cs" />
     <Compile Include="Util\DownloadInfo.cs" />
     <Compile Include="Ocr\Language.cs" />
@@ -4591,6 +4591,8 @@
     <None Include="Icons\arrow_up.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\auto_color.png" />
+    <None Include="Resources\auto_curves.png" />
     <None Include="Resources\AutoRotate.png" />
     <None Include="Resources\auto_contrast.png" />
     <None Include="Icons\application_cascade.png" />

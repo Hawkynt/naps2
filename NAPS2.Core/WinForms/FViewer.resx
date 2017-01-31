@@ -148,7 +148,7 @@
     <value>tiffViewer1</value>
   </data>
   <data name="&gt;&gt;tiffViewer1.Type" xml:space="preserve">
-    <value>NAPS2.WinForms.TiffViewerCtl, NAPS2.Core, Version=5.3.3.20288, Culture=neutral, PublicKeyToken=null</value>
+    <value>NAPS2.WinForms.TiffViewerCtl, NAPS2.Core, Version=5.3.3.18611, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tiffViewer1.Parent" xml:space="preserve">
     <value>toolStripContainer1.ContentPanel</value>
@@ -318,20 +318,38 @@
   <data name="tsDelete.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="tsAutoContrast.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="tsAutoCurves.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="tsAutoContrast.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tsAutoCurves.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="tsAutoContrast.Text" xml:space="preserve">
-    <value>Auto-Contrast</value>
+  <data name="tsAutoCurves.Text" xml:space="preserve">
+    <value>Auto-Curves</value>
+  </data>
+  <data name="tsAutoLuminance.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsAutoLuminance.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsAutoLuminance.Text" xml:space="preserve">
+    <value>Auto-Luminance</value>
+  </data>
+  <data name="tsAutoSaturation.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tsAutoSaturation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="tsAutoSaturation.Text" xml:space="preserve">
+    <value>Auto-Saturation</value>
   </data>
   <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 0</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>292, 25</value>
+    <value>338, 25</value>
   </data>
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -501,16 +519,28 @@
   <data name="&gt;&gt;tsDelete.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsAutoContrast.Name" xml:space="preserve">
-    <value>tsAutoContrast</value>
+  <data name="&gt;&gt;tsAutoCurves.Name" xml:space="preserve">
+    <value>tsAutoCurves</value>
   </data>
-  <data name="&gt;&gt;tsAutoContrast.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsAutoCurves.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsAutoLuminance.Name" xml:space="preserve">
+    <value>tsAutoLuminance</value>
+  </data>
+  <data name="&gt;&gt;tsAutoLuminance.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tsAutoSaturation.Name" xml:space="preserve">
+    <value>tsAutoSaturation</value>
+  </data>
+  <data name="&gt;&gt;tsAutoSaturation.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FViewer</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>NAPS2.WinForms.FormBase, NAPS2.Core, Version=5.3.3.20288, Culture=neutral, PublicKeyToken=null</value>
+    <value>NAPS2.WinForms.FormBase, NAPS2.Core, Version=5.3.3.18611, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

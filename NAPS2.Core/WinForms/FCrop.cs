@@ -292,10 +292,10 @@ namespace NAPS2.WinForms {
         var dragEndCoords = this._TranslatePboxCoords(e.Location);
 
         var oldCoordinates = new {
-          left=this.tbLeft.Value,
-          top=this.tbTop.Value,
-          right=this.tbRight.Value,
-          bottom=this.tbBottom.Value
+          left = this.tbLeft.Value,
+          top = this.tbTop.Value,
+          right = this.tbRight.Value,
+          bottom = this.tbBottom.Value
         };
 
         if (dragEndCoords.X > this.dragStartCoords.X) {
@@ -313,13 +313,13 @@ namespace NAPS2.WinForms {
           this.tbBottom.Value = this._workingImage.Height - this.dragStartCoords.Y;
         }
 
-        if(
-          this.tbLeft.Value!=oldCoordinates.left
+        if (
+          this.tbLeft.Value != oldCoordinates.left
           || this.tbTop.Value != oldCoordinates.top
           || this.tbRight.Value != oldCoordinates.right
           || this.tbBottom.Value != oldCoordinates.bottom
         )
-        this._UpdateTransform();
+          this._UpdateTransform();
       }
     }
 
@@ -344,6 +344,44 @@ namespace NAPS2.WinForms {
       x = Math.Max(Math.Min(x, this._workingImage.Width), 0);
       y = Math.Max(Math.Min(y, this._workingImage.Height), 0);
       return new Point((int)Math.Round(x), (int)Math.Round(y));
+    }
+  }
+
+  public class ImageViewer : Control {
+
+    private Bitmap _cache;
+    private Image _dataSource;
+
+    public Image DataSource {
+      get { return this._dataSource; }
+      set {
+        if (this._dataSource == value)
+          return;
+
+        this._dataSource = value;
+        this._cache = null;
+      }
+    }
+
+    protected override void OnSizeChanged(EventArgs e) {
+      base.OnSizeChanged(e);
+      this._cache = null;
+    }
+
+    protected override void OnPaint(PaintEventArgs e) {
+      var cache = this._cache;
+      if (cache != null) {
+        e.Graphics.DrawImage(cache, Point.Empty);
+        return;
+      }
+
+      var image = this._dataSource;
+      if (image == null)
+        return;
+
+      cache = new Bitmap(image, this.Size);
+      e.Graphics.DrawImage(cache, Point.Empty);
+      this._cache = cache;
     }
   }
 }
